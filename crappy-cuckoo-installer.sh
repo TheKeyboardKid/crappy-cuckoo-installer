@@ -38,7 +38,7 @@ tput setaf 3; echo "This script will now install the basic prerequisites for the
 tput sgr0;
 sleep 2
 
-tput setaf 3; echo "Now instally git"
+tput setaf 3; echo "Now installing git"
 tput sgr0;
 sleep 2
 
