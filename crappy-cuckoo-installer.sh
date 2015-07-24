@@ -38,6 +38,13 @@ tput setaf 3; echo "This script will now install the basic prerequisites for the
 tput sgr0;
 sleep 2
 
+tput setaf 3; echo "Now instally git"
+tput sgr0;
+sleep 2
+
+#Installing git
+sudo apt-get install git
+
 tput setaf 3; echo "Now installing Python based things"
 tput sgr0;
 sleep 2
@@ -185,6 +192,7 @@ else
     sleep 2
 fi
 
+#Add cuckoo to libvirtd user group
 read -r -p "Are you using KVM? And if so, do you want to add cuckoo to the libvirtd group? [y/N] " response
 if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
 then
@@ -199,6 +207,37 @@ else
     sleep 2
 fi
 
+#Using VMCloak to deploy vm's if wanted. This will ask first then do.
+read -r -p "Do you want to use VMCloak? It's this really cool tool by jbremer to help deploy VMs. [y/N] " response
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+then
+    tput setaf 3; echo "Now installing VMCloak"
+    tput sgr0;
+    sleep 2
+
+    #Have to install genisoimage
+    sudo apt-get install genisoimage
+
+    #Have to install dmidecode
+    sudo apt-get install dmidecode
+
+    #Have to install lshw
+    sudo apt-get install lshw
+
+    #Have to install lockfile and sphinx
+    sudo apt-get install python-lockfile
+    sudo apt-get install python-sphinx
+
+    #Now for VMCloak itself
+    git clone git://github.com/jbremer/vmcloak
+    cd vmcloak
+    sudo python setup.py install
+
+else
+    tput setaf 3; echo "That's ok... let us proceed..."
+    tput sgr0;
+    sleep 2
+fi
 
 
 
