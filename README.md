@@ -6,3 +6,11 @@ I claim no responsibility if this breaks your things. It literally says "crappy"
 I'll add more documentation as this gets better or something.
 
 Also, you can either run it as root or comment out the system check and just sudo. All commands are put in the sudo form if you choose to do that small edit. I don't because #lazy
+
+Also also, I didn't develop the awsome Cuckoo Sandbox, but you can find out more about their awesomeness by going here:
+http://www.cuckoosandbox.org/about.html
+
+This script also uses VM Cloak to help in the creation of VM's. VM Cloak and their awesomeness of development and wonderful things can be found here:
+http://vmcloak.org/
+
+I take zero and negative credit if possible for the amazing work that the developers for Cuckoo Sandbox and VMCloak did on their respective projects.
